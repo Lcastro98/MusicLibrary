@@ -4,6 +4,8 @@
  */
 package musiclibrary;
 
+import java.util.Comparator;
+
 /**
  *
  * @author Lorena Castro Lcastro0398@gmail.com
@@ -63,5 +65,37 @@ public class Song {
         return description;
     }
     
+    public static Comparator<Song> durationComparatorAsc = (Song s1, Song s2) -> {
+        float duration1 = s1.getDuration();
+        float duration2 = s2.getDuration();
+        if (duration1 < duration2) return -1;
+        if (duration1 > duration2) return 1;
+        return 0;
+    };
     
+    public static Comparator<Song> durationComparatorDesc = (Song s1, Song s2) -> {
+        float duration1 = s1.getDuration();
+        float duration2 = s2.getDuration();
+        if (duration1 > duration2) return -1;
+        if (duration1 < duration2) return 1;
+        return 0;
+        //return duration2 - duration1;
+    };
+    
+    public static Comparator<Song> yearComparatorAsc = (Song s1, Song s2) -> {
+        String year1 = s1.getYear();
+        String year2 = s2.getYear();
+        return year1.compareTo(year2);
+    };
+    
+    public static Comparator<Song> yearComparatorDesc = (Song s1, Song s2) -> {
+        String year1 = s1.getYear();
+        String year2 = s2.getYear();
+        return year2.compareTo(year1);
+    };
+    
+    @Override
+    public String toString() {
+        return "\n" + id + ". " + name + ". " + year + ". " + duration + ". " + genre;
+    }
 }

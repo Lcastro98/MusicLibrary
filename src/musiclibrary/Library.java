@@ -5,6 +5,11 @@
 package musiclibrary;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import static musiclibrary.Song.durationComparatorAsc;
+import static musiclibrary.Song.durationComparatorDesc;
+import static musiclibrary.Song.yearComparatorAsc;
+import static musiclibrary.Song.yearComparatorDesc;
 
 /**
  *
@@ -38,5 +43,34 @@ public class Library {
             }
         } 
         return this.songs.get(index);
+    }
+    
+    public void byGenre(String genre, ArrayList<Song> filterSongs) {
+        filterSongs.stream().filter(song -> song.getGenre().equals(genre)).forEach(System.out::println);
+    }
+    
+    public void byDate(String year, ArrayList<Song> filterSongs) {
+        filterSongs.stream().filter(song -> song.getYear().equals(year)).forEach(System.out::println);
+    }
+    
+    public void sortByDurationAsc(){
+        Collections.sort(songs, durationComparatorAsc);
+    }
+    
+    public void sortByDurationDesc(){
+        Collections.sort(songs, durationComparatorDesc);
+    }
+    
+    public void sortByYearAsc(){
+        Collections.sort(songs, yearComparatorAsc);
+    }
+    
+    public void sortByYearDesc(){
+        Collections.sort(songs, yearComparatorDesc);
+    }
+
+    @Override
+    public String toString() {
+        return "Biblioteca de canciones: " + getSongs();
     }
 }
