@@ -8,12 +8,17 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
+ * La clase MusicLibrary contiene el método main para iniciar el programa.
+ * 
+ * @version 1.00.00 2022-02-17, la clase corresponde a la versión 1 del sistema.
  *
  * @author Wilmer Pérez wianpedi@gmail.com
  */
 public class MusicLibrary {
 
     /**
+     * Permite la interacción con el usuario para ver, ordenar y filtrar las canciones,
+     * y crear playlist.
      * @param args the command line arguments
      */
     public static void main(String[] args) {
@@ -21,20 +26,27 @@ public class MusicLibrary {
         Library lib = new Library(new ArrayList<>()) {};
         ArrayList<Playlist> playlists = new ArrayList<>();
         
-        Song s1 = new Song(1, "Día de Enero", "2005", 2.55F, "Pop", "imagen", "Escrita y producida por Shakira, "
-                + "«Día de enero» es una canción de amor que cuenta como ella conoció a su por entonces novio, "
-                + "Antonio de la Rúa, en un día de enero. La canción también hace referencia a dos famosos personajes de cómics, "
-                + "\"Mutt & Jeff\", conocidos en español como \"Eneas & Benitín\".");
+        Song s1 = new Song(1, "Día de Enero       ", "2005", 2.55F, "Pop", 
+                "https://static.wikia.nocookie.net/shakira/images/3/3d/D%C3%ADa_de_Enero.jpg/revision/latest?cb=20121030143317", 
+                "Escrita y producida por Shakira, es una canción de amor que cuenta como ella conoció a su por entonces novio.");
         lib.addSong(s1);
-        Song s2 = new Song(2, "Sweet Child o' Mine", "1987", 5.56F, "Rock", "imagen", "«Sweet Child o' Mine» es una canción del grupo de hard rock Guns N' Roses. "
-                + "Fue publicada en su primer álbum, Appetite for Destruction, el 21 de julio de 1987. Es la novena canción en el álbum y el tercer sencillo. "
-                + "«Sweet Child o' Mine» fue el primer sencillo de Guns N' Roses en alcanzar el número uno del Billboard Hot 100, en el cual permaneció durante dos semanas en el verano de 1988.​ "
-                + "También es la primera canción de la década de los 80' en llegar a mil millones de visitas en el sitio YouTube, lo consiguieron en el año 2019.");
+        Song s2 = new Song(2, "Sweet Child o' Mine", "1987", 5.56F, "Rock", 
+                "https://images.squarespace-cdn.com/content/v1/56c240a0d51cd440f4c3f6ca/1476634391354-FD4HYCQR8TERT35AY3HN/2rcbqsh.jpg?format=1000w", 
+                "Canción del grupo de hard rock Guns N' Roses. Fue publicada en su primer álbum, Appetite for Destruction.");
         lib.addSong(s2);
-        Song s3 = new Song(3, "Dura", "2018", 3.38F, "Reguetón", "imagen", "«Dura» es una canción del puertorriqueño Daddy Yankee, perteneciente a su álbum El Disco Duro. "
-                + "Se estrenó el 18 de enero de 2018 bajo su sello El Cartel Records, y producido por el propio cantante, junto a Urba & Rome (Los Evo Jedais). "
-                + "La canción tuvo un gran parecido con el hit Gasolina también de Daddy Yankee.");
+        Song s3 = new Song(3, "Dura               ", "2018", 3.38F, "Reguetón", 
+                "https://mega963fm.sbs.co/wp-content/uploads/sites/13/2018/08/Dura080818-765x500.jpg", 
+                "Canción del puertorriqueño Daddy Yankee, perteneciente a su álbum El Disco Duro.");
         lib.addSong(s3);
+        Song s4 = new Song(4, "Otra como tú       ", "1993", 4.20F, "Pop", 
+                "https://i.scdn.co/image/ab67616d0000b273c8729fbeebb389680f1e6ee5", 
+                "Canción interpretada por Eros Ramazzotti, pertenece al álbum 'Todo historias', "
+                + "que fue la versión en español del disco original en italiano titulado 'Tutte storie'");
+        lib.addSong(s4);
+        Song s5 = new Song (5, "Johnny B. Goode   ", "1959", 2.40F, "Rock and Roll", 
+                "https://m.media-amazon.com/images/I/71DFIo6p8GL._SL1200_.jpg", 
+                "Canción del cantante y guitarrista estadounidense Chuck Berry, de su tercer álbum de estudio Chuck Berry Is on Top");
+        lib.addSong(s5);
         
         Scanner s = new Scanner(System.in);
         int menu1 = 0;
