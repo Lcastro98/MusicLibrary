@@ -18,7 +18,7 @@ import static musiclibrary.Song.yearComparatorDesc;
  * 
  * @author Lorena Castro Lcastro0398@gmail.com
  */
-public class Library {
+public abstract class Library {
     public ArrayList<Song> songs;
     
     /**
