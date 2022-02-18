@@ -50,6 +50,7 @@ public class MusicLibrary {
         
         Scanner s = new Scanner(System.in);
         int menu1 = 0;
+        try {
         do{
             System.out.println("""
                                Bienvenido al sistema Administrador de Canciones. 
@@ -125,7 +126,11 @@ public class MusicLibrary {
                     System.out.println(lib);
                 }
             }
-        } while (menu1 !=3);
+        } 
+        while (menu1 !=3);
+        } 
+        catch (NumberFormatException e){
+            System.out.println("Error: Se ha recibido un caracter no numerico");
+        }
     }
 }
-
